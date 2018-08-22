@@ -2,6 +2,9 @@ $(document).ready(function() {
 
 	let clicks = 0;
 
+// Cat clicking functionality. Opens cat image when nav is clicked and 
+// hides siblings when another is clicked
+
 	$("#liLucifer").click(function() {
 		$("#Lucifer").toggle();
 		$("#Lucifer").siblings().css("display", "none");
@@ -41,4 +44,8 @@ $(document).ready(function() {
 		clicks++;
 		$(".clicks").text(clicks + " clicks");
 	});
+
+// Admin form functionality. Opens form when admin button is clicked. 
+// When user clicks cancel, form closes. When user clicks submit, values
+// passed in replace the current cat's values.
 });
