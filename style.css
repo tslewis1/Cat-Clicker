@@ -46,3 +46,11 @@ h3 {
 	color: #092F7C;
 	text-align: center;
 }
+
+#admin {
+	display: block;
+}
+
+#adminForm {
+	display: none;
+}
