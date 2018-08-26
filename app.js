@@ -70,4 +70,14 @@ $(document).ready(function() {
 			$("#adminForm").hide();
 		})
 	});
+
+	function formEdit() {
+		let catNameInput = document.adminForm.elements.catName;
+		let catImgSrc = document.adminForm.elements.imageURL;
+		let catClicks = document.adminForm.elements.numOfClicks;
+
+		for(var i = 0; i <= catNameInput.length; i++) {
+			catNameInput[i].disabled = false;
+		}
+	}
 });
