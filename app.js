@@ -5,46 +5,6 @@ $(document).ready(function() {
 // Cat clicking functionality. Opens cat image when nav is clicked and 
 // hides siblings when another is clicked
 
-	// $("#liLucifer").click(function() {
-	// 	$("#Lucifer").toggle();
-	// 	$("#Lucifer").siblings().css("display", "none");
-	// 	clicks = 0;
-	// 	$(".clicks").text("0 clicks");
-	// 	$("#admin").show();
-	// });
-
-	// $("#liFigaro").click(function() {
-	// 	$("#Figaro").toggle();
-	// 	$("#Figaro").siblings().css("display", "none");
-	// 	clicks = 0;
-	// 	$(".clicks").text("0 clicks");
-	// 	$("#admin").show();
-	// });
-
-	// $("#liMarie").click(function() {
-	// 	$("#Marie").toggle();
-	// 	$("#Marie").siblings().css("display", "none");
-	// 	clicks = 0;
-	// 	$(".clicks").text("0 clicks");
-	// 	$("#admin").show();
-	// })
-
-	// $("#liSimba").click(function() {
-	// 	$("#Simba").toggle();
-	// 	$("#Simba").siblings().css("display", "none");
-	// 	clicks = 0;
-	// 	$(".clicks").text("0 clicks");
-	// 	$("#admin").show();
-	// })
-
-	// $("#liRajah").click(function() {
-	// 	$("#Rajah").toggle();
-	// 	$("#Rajah").siblings().css("display", "none");
-	// 	clicks = 0;
-	// 	$(".clicks").text("0 clicks");
-	// 	$("#admin").show();
-	// })
-
 	$("img").click(function() {
 		clicks++;
 		$(".clicks").text(clicks + " clicks");
