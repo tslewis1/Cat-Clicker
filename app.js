@@ -71,13 +71,18 @@ $(document).ready(function() {
 		})
 	});
 
-	function formEdit() {
-		let catNameInput = document.adminForm.elements.catName;
-		let catImgSrc = document.adminForm.elements.imageURL;
-		let catClicks = document.adminForm.elements.numOfClicks;
+	$("input").keyup(function() {
+		let value = $(this).val();
+		$("h3").text(value);
+	});
 
-		for(var i = 0; i <= catNameInput.length; i++) {
-			catNameInput[i].disabled = false;
-		}
-	}
+	// function formEdit() {
+	// 	let catNameInput = document.adminForm.elements.catName;
+	// 	let catImgSrc = document.adminForm.elements.imageURL;
+	// 	let catClicks = document.adminForm.elements.numOfClicks;
+
+	// 	for(var i = 0; i <= catNameInput.length; i++) {
+	// 		catNameInput[i].disabled = false;
+	// 	}
+	// }
 });
