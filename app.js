@@ -33,4 +33,16 @@ $(function() {
 	var octopus = {
 
 	};
+
+	var navListView = {
+
+	};
+
+	var displayView = {
+
+	};
+
+	var adminFormView = {
+
+	};
 });
