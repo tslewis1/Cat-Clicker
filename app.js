@@ -30,20 +30,7 @@ $(function() {
 		],
 };
 
-// Admin form functionality. Opens form when admin button is clicked. 
-// When user clicks cancel, form closes. When user clicks submit, values
-// passed in replace the current cat's values.
+	var octopus = {
 
-	$("#admin").click(function() {
-		$("#adminForm").toggle();
-		$("#cancelButton").click(function() {
-			$("#adminForm").hide();
-		})
-	});
-
-	$("input").keyup(function() {
-		let value = $(this).val();
-		$("h3").text(value);
-	});
-
+	};
 });
