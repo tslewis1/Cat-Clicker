@@ -27,6 +27,27 @@
 	</form>
 </div>
 
+<!-- Cat List Items -->
+
+<script type="text/template" data-template="image-link">
+	<li class="image-link" data-id="{{id}}">
+		<a href="#">{{name}}</a>
+	</li>
+</script>
+
+<!-- Cat Image Display -->
+
+<script type="text/template" data-template="cat-display-area">
+	<div class="cat"
+		cat-id="{{id}}"
+		cat-name="{{name}}"
+		cat-clicks="{{clicks}}">
+			<h3 class="catName">{{name}}</h3>
+			<img src="{{image}}">
+			<p class="clicks">{{clicks}}</p>
+	</div>
+</script>
+
 <!-- JS Scripts -->
 	<script src="jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="app.js"></script>
