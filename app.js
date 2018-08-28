@@ -41,7 +41,7 @@ $(function() {
 			// the nav-list-view div
 			this.$navListView = $('#nav-list-view');
 			// the cat image list items
-			this.catImageTemplate = $('script[data-template="cat-display-area"]').html();
+			this.catImageTemplate = $('script[data-template="image-link"]').html();
 			this.catNavList = $('<ul id="cat-nav-list"></ul>');
 
 			this.$navListView.click('a', function() {
@@ -71,7 +71,34 @@ $(function() {
 	};
 
 	var displayView = {
-		
+		init: function() {
+			// the cat-display area div
+			this.$displayView = $('#cat-display-area');
+			// the cat image items
+			this.catDisplayTemplate = $('script[data-template="cat-display-area"]').html();
+
+			this.click('img', function() {
+				let id = $(this).parents().data("id");
+				octopus.addClicks(id);
+			})
+
+			this.render();
+		},
+
+		render: function() {
+			let $displayView = this.$displayView,
+				catDisplayTemplate = this.catDisplayTemplate;
+
+			let thisCat = octopus.getSelectedCat();
+			let thisTemplate =
+				catDisplayTemplate
+				.replace(/{{id}}/, thisCat.id)
+				.replace(/{{name}}/, thisCat.name)
+				.replace(/{{image}}/, thisCat.image)
+				.replace(/{{clicks}}/, thisCat.clicks);
+				
+			$displayView.html(thisTemplate);
+		}
 	};
 
 	var adminFormView = {
