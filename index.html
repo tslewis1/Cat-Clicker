@@ -11,43 +11,21 @@
 
 <!-- Navigation List of Cats -->
 
-	<ul id="clickableCats">
-		<li id="liLucifer">Lucifer</li>
-		<li id="liFigaro">Figaro</li>
-		<li id="liMarie">Marie</li>
-		<li id="liSimba">Simba</li>
-		<li id="liRajah">Rajah</li>
-	</ul>
+<div class="nav-list-view"></div>
 
 <!-- Cat Images -->
-	<div id="cats">
 
-		<div id="image" id="image1">
-		</div>
-
-		<div class="image" id="image2">
-		</div>
-
-		<div class="image" id="image3">
-		</div>
-
-		<div class="image" id="image4">
-		</div>
-
-		<div class="image" id="image5">
-		</div>
-	</div>
-
+<div class="cat-display-area"></div>
 
 <!-- Admin Form -->
 	<button id="admin">Admin</button>
-	<form id="adminForm" name="adminForm">
+	<form id="adminForm">
 		<p class="inputText">Cat Name</p>
-		<input type="text" name="catName" value="">
+		<input type="text" id="catName">
 		<p class="inputText">URL</p>
-		<input type="text" name="imageURL" value="">
+		<input type="text" id="imageURL">
 		<p class="inputText">Clicks</p>
-		<input type="text" name="numOfClicks" value="">
+		<input type="text" id="numClicks">
 		<input type="button" name="cancel" value="Cancel" id="cancelButton">
 		<input type="submit" name="submitButton" id="submitButton">
 	</form>
