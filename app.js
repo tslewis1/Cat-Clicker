@@ -1,24 +1,32 @@
-$(document).ready(function() {
-
-	let clicks = 0;
-
-// Cat clicking functionality. Opens cat image when nav is clicked and 
-// hides siblings when another is clicked
-
-	$("img").click(function() {
-		clicks++;
-		$(".clicks").text(clicks + " clicks");
-	});
+$(function() {
 
 var cats = [
-	{name: "Lucifer", image: "images/Lucifer.jpg"},
-	{name: "Figaro", image: "images/Figaro.jpg"},
-	{name: "Marie", image: "images/Marie.jpeg"},
-	{name: "Simba", image: "images/Simba.jpg"},
-	{name: "Rajah", image: "images/Rajah.jpg"}
+	{
+		name: "Lucifer", 
+		image: "images/Lucifer.jpg",
+		clicks: 0
+	},
+	{
+		name: "Figaro", 
+		image: "images/Figaro.jpg",
+		clicks: 0
+	},
+	{
+		name: "Marie", 
+		image: "images/Marie.jpeg",
+		clicks: 0
+	},
+	{
+		name: "Simba", 
+		image: "images/Simba.jpg",
+		clicks: 0
+	},
+	{
+		name: "Rajah", 
+		image: "images/Rajah.jpg",
+		clicks: 0
+	}
 ];
-
-document.getElementById("clickableCats").innerHTML = cats[i];
 
 // Admin form functionality. Opens form when admin button is clicked. 
 // When user clicks cancel, form closes. When user clicks submit, values
