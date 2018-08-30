@@ -142,7 +142,7 @@ $(function() {
 			// the cat image items
 			this.catDisplayTemplate = $('script[data-template="cat-display-area"]').html();
 
-			this.click('img', function() {
+			$('img').click('img', function() {
 				let id = $(this).parents().data("id");
 				octopus.addClicks(id);
 			})
@@ -167,8 +167,43 @@ $(function() {
 	};
 
 	var adminFormView = {
+		init: function() {
+			this.$admin = $('#admin');
+			this.$adminButton = $('#adminButton');
+			this.adminForm = $('#adminForm');
 
+			$('#adminButton').click(function() {
+				octopus.toggleAdminForm();
+			});
+
+			$('#submitButton').click(function() {
+				octopus.updateCats();
+			});
+
+			$('#cancelButton').click(function() {
+				octopus.toggleAdminForm();
+			});
+
+			this.render();
+		},
+
+		render: function() {
+			let admin = this.$admin,
+				adminForm = this.adminForm;
+
+			let cat = octopus.getSelectedCat();
+
+			$('#catName').val(cat.name);
+			$('#imageURL').val(cat.image);
+			$('#numClicks').val(cat.clicks);
+
+			if (octopus.adminMode()) {
+				adminForm.show();
+			} else {
+				adminForm.hide();
+			}
+		}
 	};
 
-	// octopus.init();
+	octopus.init();
 });
