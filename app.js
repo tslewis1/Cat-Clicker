@@ -31,7 +31,72 @@ $(function() {
 };
 
 	var octopus = {
+		setCatID: function() {
+			model.cats.forEach(function(cat, index) {
+				cat.id = index;
+			});
+		},
 
+		getAllCats: function() {
+			return model.cats;
+		},
+
+		selectCat: function(cat) {
+			this.currentCat = model.cats[cat.id];
+			displayView.render();
+			adminFormView.render();
+		},
+
+		getSelectedCat: function() {
+			return this.currentCat;
+		},
+
+		addClicks: function(id) {
+			model.cats[id].clicks++;
+			displayView.render();
+			adminFormView.render();
+		},
+
+		toggleAdminForm: function() {
+			if (model.admin) {
+				model.admin = false;
+			} else {
+				model.admin = true;
+			};
+			adminFormView.render();
+		},
+
+		adminMode: function() {
+			return model.admin;
+		},
+
+		updateCats: function() {
+			// Get input values
+			let name = $('#catName').val();
+			let image = $('#imageURL').val();
+			let clicks = $('#numClicks').val();
+
+			let id = this.currentCat.id
+			// Change information for the current cat
+			model.cats[id].name = name;
+			model.cats[id].image = image;
+			model.cats[id].clicks = clicks;
+
+			// Turn off admin mode
+			this.toggleAdminForm();
+			$('#cat-nav-list').empty();
+			navListView.render();
+			displayView.render();
+		},
+
+		init: function() {
+			this.setCatID();
+			this.currentCat = model.cats[0];
+
+			navListView.init();
+			displayView.init();
+			adminFormView.init();
+		}
 	};
 
 	var navListView = {
@@ -96,7 +161,7 @@ $(function() {
 				.replace(/{{name}}/, thisCat.name)
 				.replace(/{{image}}/, thisCat.image)
 				.replace(/{{clicks}}/, thisCat.clicks);
-				
+
 			$displayView.html(thisTemplate);
 		}
 	};
